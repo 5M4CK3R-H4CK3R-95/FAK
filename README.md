@@ -9,7 +9,7 @@ ________        __
 |         /            \     |  \ 
 |        /              \    |   \ 
 ```
-#Installation .
+# Installation 
 To install FKE in your system just follow these command just copy and past these in your terminal
 ```
 apt update

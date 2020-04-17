@@ -1,4 +1,5 @@
 # FAK
+```
 ________        __
 |              /  \          |   /
 |             /    \         |  /
@@ -7,7 +8,7 @@ ________        __
 |          /          \      | \ 
 |         /            \     |  \ 
 |        /              \    |   \ 
-
+```
 #Installation .
 To install FKE in your system just follow these command just copy and past these in your terminal
 ```
@@ -22,9 +23,9 @@ chmod +x *
 bash install.sh
 ```
 
-##<<<- It Would Install FKE in your system ->>>
+## <<<- It Would Install FKE in your system ->>>
 
-#Usage
+# Usage
 ```
 all command list : 
 
@@ -68,7 +69,7 @@ for reset :
 
 ./fb -r
 ```
-#Description
+# Description
 
 This is a simple Script that is use to make a phising page and also it can do a bruteforc attack on any faceook account \n
 you can use this tool in linux and termux both \n
@@ -77,20 +78,9 @@ Desktop and android it also support a bruteforce attacking scrip
 To do a phising attack you need to first install this tool after installing it just type ./fb -h to see all command list and you 
 can use them in it it is very simple and it is very fast to use .
 
-##NOTE : 
-*/
+## NOTE : 
+* \
 For buinding a page you need a source code of victims profile you can use any html inspector to get it and then save it on your 
 internal storege by using any text editor and also donot try to edit the source code after that save the file you can use any
 name to save it after that just enter the name of the file in it by -f tag it would buind it and start your server and now just 
 send that site that it would give u and you are done ....
-*/
-
-
-
-
-
-
-
-
-
-

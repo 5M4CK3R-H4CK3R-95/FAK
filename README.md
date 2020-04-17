@@ -15,6 +15,7 @@ To install FKE in your system just follow these command just copy and past these
 apt update
 apt upgrade
 apt install python
+apt install php
 apt install python2
 apt install git
 git clone https://github.com/5M4CK3R-H4CK3R-95/FAK.git

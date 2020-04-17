@@ -181,23 +181,23 @@ type :
 
   -h [for List all commands]
 
-  -b [-b reffer for bruteforce attack]
+  -b [-b refer for bruteforce attack]
 
-  -p [-p reffer for phising attack]
+  -p [-p refer for phising attack]
 
   -d [it is use to list the path of the world list]
 
-  -u [it reffer for username]
+  -u [it refer for username]
 
-  -i [it reffer for ip address]
+  -i [it refer for ip address]
 
-  -r [it reffer for port]
+  -r [it refer for port]
 
-  -v [it reffer for version pc/android]
+  -v [it refer for version pc/android]
 
   -o [Set output file path and name in .txt format]
 
-  -f [it reffer for html file]
+  -f [it refer for html file]
 
   -j [url which shuld open after login]
 

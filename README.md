@@ -72,7 +72,7 @@ for reset :
 ```
 # Description
 
-This is a simple Script that is use to make a phising page and also it can do a bruteforc attack on any faceook account \n
+This is a simple Script that is use to make a phising page and also it can do a bruteforc attack on any facebook account \n
 you can use this tool in linux and termux both \n
 this tool also contain a buinding feature it can make any persons profile link to a phising page on both type of plateforms like /n
 Desktop and android it also support a bruteforce attacking scrip

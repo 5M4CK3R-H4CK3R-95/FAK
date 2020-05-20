@@ -5,6 +5,8 @@ apt install python -y
 apt install python2 -y
 apt install perl -y
 apt install php -y
+pip install requests
+pip2 install requests
 clear
 chmod +x *
 chmod +x data/br

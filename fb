@@ -133,11 +133,7 @@ def phising():
 		data = sys.argv
 		file_position = data.index('-f')
 		file_position = file_position + 1
-		os.system('')
 		url = sys.argv[file_position] # other file of you wont to buind are located here
-		if version == 'android':
-			if 'www.' in url:
-				url = url.replace('www.' , 'm.')
 		fp = urllib.request.urlopen(url)
 		mybytes = fp.read()
 		mystr = mybytes.decode("utf8")
